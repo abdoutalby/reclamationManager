@@ -35,44 +35,24 @@ class AjouterOpinionS extends State<AjouterOpinion>{
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
           children:[
-             Image.network("https://picsum.photos/200" ,
-             height: Get.height*0.4,
-               width: Get.width*0.7,
-             ) ,
 
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Text( "ajouter opinion ",
-
-                ),
+                child:Center(child: Text( "Votre opinion  ",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 25
+                  ),
+                ),)
               ),
-            Padding(padding: EdgeInsets.all(20),
-              child: DropdownButton(
-                value: "category",
-                items: const [
-                    DropdownMenuItem(child: Text("category"),
-                      value: "category",
-                    ),
-                    DropdownMenuItem(child: Text("santer"),
-                      value: "santer",
-                    ),
-                    DropdownMenuItem(child: Text("kayes") ,
-                      value: "kayes",
-                    ),
-                    DropdownMenuItem(child: Text("transport") ,
-                      value: "transport",),
-              ], onChanged:  (value) =>controller.category = value.toString(),
 
-              ),
-            )
-,
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: TextField(
+                maxLines: 10,
                 controller: controller.opinion,
                 decoration: InputDecoration(
-
-                  hintText: "please write your opinion",
+                  hintText: "Veuillez saisir votre opinion",
                   fillColor: AppColors.WHITE,
                   enabledBorder: OutlineInputBorder(
                       borderSide:
@@ -89,7 +69,8 @@ class AjouterOpinionS extends State<AjouterOpinion>{
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: ElevatedButton(
-                  onPressed: (){}, child: Text("save")),
+
+                  onPressed: (){}, child: Text("Enregistrer")),
             )
         ]),
     );

@@ -44,7 +44,7 @@ class _RegisterPageS extends State<RegisterPage> {
                 height: 65,
               ),
               Text(
-                "JOIN US",
+                "S'inscrire",
                 style: TextStyle(fontSize: 25),
               ),
 
@@ -55,7 +55,7 @@ class _RegisterPageS extends State<RegisterPage> {
                     TextField(
                       controller: controller.name,
                       decoration: InputDecoration(
-                         hintText: "name",
+                         hintText: "nom",
 
                         fillColor: AppColors.WHITE,
                         enabledBorder: OutlineInputBorder(
@@ -87,7 +87,7 @@ class _RegisterPageS extends State<RegisterPage> {
                                 borderSide:
                                     BorderSide(color: AppColors.TEXT_COLOR)),
                             filled: true,
-                            hintText: 'lastname')),
+                            hintText: 'prenom')),
                     const SizedBox(
                       height: 25,
                     ),
@@ -125,7 +125,7 @@ class _RegisterPageS extends State<RegisterPage> {
                                 borderSide:
                                     BorderSide(color: AppColors.TEXT_COLOR)),
                             filled: true,
-                            hintText: 'tel')),
+                            hintText: 'téléphone')),
                     const SizedBox(
                       height: 25,
                     ),
@@ -164,7 +164,7 @@ class _RegisterPageS extends State<RegisterPage> {
                                 borderSide:
                                     BorderSide(color: AppColors.TEXT_COLOR)),
                             filled: true,
-                            hintText: 'password')),
+                            hintText: 'mot de passe')),
                     const SizedBox(
                       height: 25,
                     ),
@@ -185,7 +185,7 @@ class _RegisterPageS extends State<RegisterPage> {
                                     color: AppColors.BLACK,
                                   )
                                 : Text(
-                                    "sign in",
+                                    "s'inscrire",
                                     style: TextStyle(color: AppColors.WHITE),
                                   ),
                           ),
@@ -203,7 +203,7 @@ class _RegisterPageS extends State<RegisterPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    'already a  member ?',
+                    'vous avez déjà un compte ?',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
@@ -213,7 +213,7 @@ class _RegisterPageS extends State<RegisterPage> {
                       Get.offAll(() => LoginPage());
                     },
                     child: const Text(
-                      ' sign Up',
+                      'connecter',
                       style: TextStyle(
                         color: Colors.blue,
                         fontWeight: FontWeight.bold,

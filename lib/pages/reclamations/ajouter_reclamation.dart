@@ -34,9 +34,9 @@ class AjouterReclamationS extends State<AjouterReclamation> {
         title: Text("ajouter reclamation"),
       ),
       body:  Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20 , vertical: 50),
+          padding: EdgeInsets.symmetric(horizontal: 20 ,),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               TextField(
@@ -54,9 +54,7 @@ class AjouterReclamationS extends State<AjouterReclamation> {
                   filled: true,
                 ),
               ),
-              const SizedBox(
-                height: 20,
-              ),
+
               TextField(
                 controller: controller.adresse,
                 decoration: InputDecoration(
@@ -72,9 +70,7 @@ class AjouterReclamationS extends State<AjouterReclamation> {
                   filled: true,
                 ),
               ),
-              const SizedBox(
-                height: 20,
-              ),
+
   TextField(
                 controller: controller.category,
                 decoration: InputDecoration(
@@ -90,23 +86,17 @@ class AjouterReclamationS extends State<AjouterReclamation> {
                   filled: true,
                 ),
               ),
-              const SizedBox(
-                height: 20,
-              ),
 
            TextButton(onPressed: ()=>_chooseImage, child: Text("image")),
-              const SizedBox(
-                height: 20,
-              ),
 
+              Image.network("https://picsum.photos/200"),
               Container(
                   width: Get.width-50,
                   height: Get.height*0.07,
                   child: ElevatedButton(onPressed: controller.save, child: Obx(()=> controller.isLoading.value?CircularProgressIndicator()
                       : Text("Enregister"))))
             ],
-          ),
-        ),
+        ),)
       );
 
   }

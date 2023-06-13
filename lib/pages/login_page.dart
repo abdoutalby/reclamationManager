@@ -49,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
                 "Reclamations",
                ),
               Text(
-                "Togother to make it better",
+                "Pour le rendre meilleure",
                ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -92,7 +92,7 @@ class _LoginPageState extends State<LoginPage> {
                                 borderSide:
                                 BorderSide(color: AppColors.TEXT_COLOR)),
                             filled: true,
-                            hintText: 'Password')),
+                            hintText: 'mot de passe')),
                     const SizedBox(
                       height: 25,
                     ),
@@ -116,7 +116,7 @@ class _LoginPageState extends State<LoginPage> {
                               color: AppColors.BLACK,
                             )
                                 : Text(
-                              "sign in",
+                              "se connecter",
                               style: TextStyle(color: AppColors.WHITE),
                             ),
                           ),
@@ -134,7 +134,7 @@ class _LoginPageState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    'Not a member ?',
+                    "vous n'avez pas du compte ?",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
@@ -144,7 +144,7 @@ class _LoginPageState extends State<LoginPage> {
                       Get.to(() => RegisterPage());
                     },
                     child: const Text(
-                      ' Join us now',
+                      ' nous rejoindre',
                       style: TextStyle(
                         color: Colors.blue,
                         fontWeight: FontWeight.bold,

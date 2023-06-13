@@ -16,7 +16,7 @@ class HomePageS  extends State<HomePage>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("home"),
+        title: Text("Accueil"),
 actions: [
   IconButton(onPressed: (){}, icon: Icon(Icons.login_outlined))
 ]
