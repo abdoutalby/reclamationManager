@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
+import 'package:reclamations/utils/apis.dart';
 
 import '../pages/login_page.dart';
 
@@ -27,7 +28,7 @@ class RegisterController extends GetxController{
 
     isLoading.value = true ;
     try {
-      var url = Uri.parse('http://192.168.1.13:8000/citoyen/');
+      var url = Uri.parse(AppApis.baseUrl+AppApis.registerCitoyen);
       var response = await http.post(url, body: body);
       print('Response status: ${response.statusCode}');
       print('Response body: ${response.body}');

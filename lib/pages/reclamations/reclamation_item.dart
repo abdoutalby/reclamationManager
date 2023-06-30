@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:reclamations/pages/opinion/ajouter_opinion.dart';
+import 'package:reclamations/utils/apis.dart';
 
 import 'handle_reclamation.dart';
 
@@ -17,7 +18,7 @@ class ReclamationItem extends StatelessWidget {
             width: Get.width * 0.95,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(7)),
-                color: Colors.white,
+                color: reclamation["status"] ?  Colors.green[100] : Colors.red[100],
                 boxShadow: [
                   BoxShadow(
                       color: Colors.grey.shade600,
@@ -29,28 +30,39 @@ class ReclamationItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  ClipRect(
-                    child: Image.network("https://picsum.photos/200"),
-                  ),
+                  Container(
+                      width: Get.width * 0.12,
+                      height: Get.height * 0.17,
+                      child: ClipRect(
+                        child: Image.network(
+                          AppApis.baseUrl +
+                              AppApis.uploads +
+                              reclamation["image"],
+                          errorBuilder: (c, exception, stackTrace) {
+                            return Center(
+                                child: Icon(
+                              Icons.error_outline,
+                              color: Colors.red[300],
+                              size: Get.width * 0.12,
+                            ));
+                          },
+                        ),
+                      )),
                   Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.baseline,
                       textBaseline: TextBaseline.alphabetic,
                       children: [
-                        Text("municipalite",
+                        Text("${reclamation["municipalite"]}",
                             style: const TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold)),
-                        Text("adresse",
-                            style: const TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold)),
-                        Text("category",
+                        Text("${reclamation["adresse"]}",
                             style: const TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold)),
                       ]),
-                  Text("status",
+                  Text("${reclamation["status"]}",
                       style: const TextStyle(
                           color: Colors.black, fontWeight: FontWeight.bold)),
                   Column(
@@ -58,7 +70,7 @@ class ReclamationItem extends StatelessWidget {
                     children: [
                       IconButton(
                           onPressed: () {
-                            Get.to(HandleReclamationPage(),
+                            Get.off(() => HandleReclamationPage(),
                                 arguments: reclamation);
                           },
                           icon: Icon(Icons.auto_fix_high)),

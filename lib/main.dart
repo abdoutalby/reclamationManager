@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:reclamations/pages/login_page.dart';
-import 'package:reclamations/pages/opinion/ajouter_opinion.dart';
-import 'package:reclamations/pages/reclamations/reclamations_list.dart';
+import 'package:reclamations/pages/splash.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -17,6 +17,6 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Reclamation App',
-      home:LoginPage());
+      home:SplashScreen());
   }
 }

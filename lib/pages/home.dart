@@ -2,7 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:reclamations/pages/opinion/ajouter_opinion.dart';
+import 'package:reclamations/pages/opinion/opinion_list.dart';
 import 'package:reclamations/pages/reclamations/ajouter_reclamation.dart';
+import 'package:reclamations/pages/splash.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 
 class HomePage extends StatefulWidget{
@@ -18,7 +21,11 @@ class HomePageS  extends State<HomePage>{
       appBar: AppBar(
         title: Text("Accueil"),
 actions: [
-  IconButton(onPressed: (){}, icon: Icon(Icons.login_outlined))
+  IconButton(onPressed: ()async{
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.clear();
+    Get.offAll(()=>SplashScreen());
+  }, icon: Icon(Icons.login_outlined))
 ]
           ,
       ),
@@ -28,7 +35,7 @@ actions: [
                   Padding(
                     padding: const EdgeInsets.all(20),
                     child: ElevatedButton(onPressed: (){
-                      Get.to(AjouterOpinion());
+                      Get.to(()=>OpinionList());
                     }, child: Container(
                       height: Get.height*0.09,
                       width: Get.width * 0.91,

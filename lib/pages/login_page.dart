@@ -22,7 +22,6 @@ class _LoginPageState extends State<LoginPage> {
     controller = Get.put(LoginController());
   }
 
-
   @override
   void dispose() {
     super.dispose();
@@ -37,7 +36,7 @@ class _LoginPageState extends State<LoginPage> {
         child: Center(
           child: SingleChildScrollView(
             child:
-            Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               // SvgPicture.asset(
               //   'login.svg',
               //   height: 200,
@@ -47,10 +46,10 @@ class _LoginPageState extends State<LoginPage> {
               ),
               Text(
                 "Reclamations",
-               ),
+              ),
               Text(
                 "Pour le rendre meilleure",
-               ),
+              ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Column(
@@ -64,12 +63,12 @@ class _LoginPageState extends State<LoginPage> {
                         fillColor: AppColors.WHITE,
                         enabledBorder: OutlineInputBorder(
                             borderSide:
-                            BorderSide(color: AppColors.SECONDARY_COLOR),
+                                BorderSide(color: AppColors.SECONDARY_COLOR),
                             borderRadius: BorderRadius.circular(12)),
                         focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                             borderSide:
-                            BorderSide(color: AppColors.TEXT_COLOR)),
+                                BorderSide(color: AppColors.TEXT_COLOR)),
                         filled: true,
                       ),
                     ),
@@ -77,8 +76,7 @@ class _LoginPageState extends State<LoginPage> {
                       height: 20,
                     ),
                     TextField(
-                        controller:
-                        controller.passwordController,
+                        controller: controller.passwordController,
                         obscureText: true,
                         decoration: InputDecoration(
                             prefix: Icon(Icons.lock),
@@ -90,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
                             focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(12),
                                 borderSide:
-                                BorderSide(color: AppColors.TEXT_COLOR)),
+                                    BorderSide(color: AppColors.TEXT_COLOR)),
                             filled: true,
                             hintText: 'mot de passe')),
                     const SizedBox(
@@ -100,25 +98,22 @@ class _LoginPageState extends State<LoginPage> {
                       width: 300,
                       height: 50,
                       child: Obx(
-                            () => OutlinedButton(
+                        () => OutlinedButton(
                           onPressed: controller.isLoading.value
                               ? null
-                              : () => {
-                            Get.to(HomePage())
-                            //controller.Login()},
-                          },
+                              : () => {controller.LoginCitoyen()},
                           style: ButtonStyle(
                               backgroundColor: MaterialStateProperty.all(
                                   AppColors.ACCENT_COLOR)),
                           child: Center(
                             child: controller.isLoading.value
                                 ? CircularProgressIndicator(
-                              color: AppColors.BLACK,
-                            )
+                                    color: AppColors.BLACK,
+                                  )
                                 : Text(
-                              "se connecter",
-                              style: TextStyle(color: AppColors.WHITE),
-                            ),
+                                    "se connecter",
+                                    style: TextStyle(color: AppColors.WHITE),
+                                  ),
                           ),
                         ),
                       ),
@@ -159,5 +154,4 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-
 }
