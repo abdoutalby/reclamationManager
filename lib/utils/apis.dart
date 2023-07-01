@@ -1,6 +1,6 @@
 class AppApis{
   static String baseUrl = "http://192.168.43.125:8000";
-  static String uploads = "/uploads/";
+  static String uploads = "/reclamation/images/";
   static String registerCitoyen = "/citoyen/";
   static String loginCitoyen = "/citoyen/login";
   static String loginAgent = "/agentM/login";
@@ -10,4 +10,5 @@ class AppApis{
   static String getAllCat = "/catRec/";
   static String addReclamation = "/reclamation/";
   static String getAllReclamation = "/reclamation/";
+  static String getAllAnnonces = "/annonce/annonces";
 }

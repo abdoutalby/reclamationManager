@@ -15,6 +15,7 @@ dependencies:
   shared_preferences:
   jwt_decoder:
   image_picker:
+  flutter_pdfview:
 
   cupertino_icons: ^1.0.2
 

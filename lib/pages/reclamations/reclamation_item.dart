@@ -37,15 +37,15 @@ class ReclamationItem extends StatelessWidget {
                         child: Image.network(
                           AppApis.baseUrl +
                               AppApis.uploads +
-                              reclamation["image"],
-                          errorBuilder: (c, exception, stackTrace) {
-                            return Center(
-                                child: Icon(
-                              Icons.error_outline,
-                              color: Colors.red[300],
-                              size: Get.width * 0.12,
-                            ));
-                          },
+                              reclamation["_id"],
+                        //   errorBuilder: (c, exception, stackTrace) {
+                        //     return Center(
+                        //         child: Icon(
+                        //       Icons.error_outline,
+                        //       color: Colors.red[300],
+                        //       size: Get.width * 0.12,
+                        //     ));
+                        //   },
                         ),
                       )),
                   Column(

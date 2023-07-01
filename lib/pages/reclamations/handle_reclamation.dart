@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:reclamations/controllers/handle_reclamation.dart';
 import 'package:reclamations/pages/reclamations/reclamations_list.dart';
 
+import '../../utils/apis.dart';
+
 class HandleReclamationPage extends StatefulWidget {
   @override
   State<HandleReclamationPage> createState() => HandleReclamationPageS();
@@ -38,7 +40,9 @@ class HandleReclamationPageS extends State<HandleReclamationPage> {
         ClipRect(
             clipBehavior: Clip.hardEdge,
             child: Image.network(
-              "https://picsum.photos/200",
+              AppApis.baseUrl +
+                  AppApis.uploads +
+                 controller.reclamation["_id"],
               width: Get.width,
               height: Get.height * 0.4,
             )),
