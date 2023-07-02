@@ -11,4 +11,6 @@ class AppApis{
   static String addReclamation = "/reclamation/";
   static String getAllReclamation = "/reclamation/";
   static String getAllAnnonces = "/annonce/annonces";
+  static String getAnnonceFile = "/annonce/file/";
+
 }

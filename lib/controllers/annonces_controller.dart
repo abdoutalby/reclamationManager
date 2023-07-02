@@ -24,7 +24,6 @@ class AnnoncesController extends GetxController{
        var response = await http.get(url);
        if (response.statusCode == 200) {
          isLoading.value = false;
-         print(response.body);
          annonces.value =jsonDecode(response.body);
        } else {
          isLoading.value = false;
